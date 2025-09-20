@@ -10,7 +10,7 @@
 -  Output: This is *italic* text.
 
 -  CODEIN
--  Marks a code. One-liner by default. Example: [CODE This is my codek.]
+-  Marks a code. One-liner by default. Example: [CODE This is my code.]
 -  Output: `This is my code.`
 
 -  CODE
