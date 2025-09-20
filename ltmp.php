@@ -98,11 +98,5 @@
             }
             return $output;
         }
-    }
-    $ltmp = new LTMP();
-    $result = $ltmp->parse("This is a [BOLD bold] text.<br>This is an [ITALIC italic] text.<br>[ITALIC [BOLD This]] is a bold and italic text.<br>[CODE this is a code.]");
-    if($ltmp->parse_error){
-      die("Failed to parse!");
-    }
-    echo $result;
+    }
 ?>
