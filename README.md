@@ -13,57 +13,63 @@ echo $parsed_text;
 ```
 
 ## Tags list
-- `BOLD`
+`BOLD`
 - Marks text as bold. Example: This is `[BOLD bold]` text.
 - Output: This is **bold** text.
 
-- `ITALIC`
+`ITALIC`
 - MArks text as italic. Example: This is `[ITALIC italic]` text.
 - Output: This is *italic* text.
 
-- `INCODE`
+`INCODE`
 - Marks a code. One-liner by default. Example: `[INCODE This is my code.]`
 - Output: `This is my code.`
 
-- `CODE`
+`CODE`
 - Marks a code. Supports multiple lines. Example: `[CODE This is my codeblock.]`
 - Output: ```This is my codeblock.```
 
-- `TCOLOR`:
+`TCOLOR`:
 - Displays a text with colors. Syntax: `[TCOLOR bg fg]` (bg and fg are hex like FF00AA)
 - Example: `[TCOLOR FF0000 FFFFFF This is a text with red background and white text color.]`
 
-- `LINK`
+`LINK`
 - Displays a link. Syntax: `[LINK URL text]`
 - Example: `[LINK https://google.com Google website]`
 - Renders as: [Google website](https://google.com)
 
-- `LIST`
+`LIST`
 - Creates an unordered list.
 
-- `OLIST`
+`OLIST`
 - Creates an ordered list with numbers.
 
-- `LISTI`
+`LISTI`
 - Creates a list item. Nested in `LIST` or `OLIST`.
-- Example: `[LIST [LISTI Apple][LISTI Banana][LISTI Cherry]]`
+Example: `[LIST [LISTI Apple][LISTI Banana][LISTI Cherry]]`
 - Renders as:
 - Apple
 - Banana
 - Cherry
+- OR:
+`[OLIST [LISTI Apple][LISTI Banana][LISTI Cherry]]`
+- Renders as:
+1. Apple
+2. Banana
+3. Cherry
 
-- `HEADER1-6`
+`HEADER1-6`
 - These are tags creates headers. Example: ```[HEADER1 Title]
 [HEADER2 Subtitle]```
 - Renders as:
 # Title
 ## Subtitle
 
-- `EXP`
+`EXP`
 - Exponent text/superscript. Example: `2[EXP 3]`
 - Renders as: 2<sup>3</sup>
 
 
-- `CLT` (Chemical low text)
+`CLT` (Chemical low text)
 - Subscript. Example: `H[CLT 2]SO[CLT 4]`
 - Renders as: H<sub>2</sub>SO<sub>4</sup>
