@@ -1,4 +1,4 @@
-**LTMP (Lightweight Text Markup Processor)** is a markup language. It uses tag system, and it allows nesting in under 200 lines of code. Tag syntax is like `[TAG text]` or `[TAG arg1 text]` or `[TAG arg1 arg2 text]`.
+**LTMP (Lightweight Text Markup Processor)** is a markup language. It uses tag system, has variables, colors, text formats and nesting etc. in under 200 lines of code. Tag syntax is like `[TAG arg1 arg2 ...]`.
 
 ## How to include in PHP
 
@@ -78,21 +78,24 @@ Example: `[LIST [LISTI Apple][LISTI Banana][LISTI Cherry]]`
 - Renders as: H<sub>2</sub>SO<sub>4</sup>
 
 `!`
-- Comment tag, ignored by parser. Example: ```[! this is my paragraph]
-[HEADER1 Lorem Ipsum]```
+- Comment tag, ignored by parser. Example:
+```
+[! this is my paragraph]
+[HEADER1 Lorem Ipsum]
+```
 
 `DEFVAR`
 - Defines a variable or array of strings. Whitespace sensitive. Examples:
-- ```
-  [DEFVAR version 1.0] [! defines a single variable]
-  [DEFVAR fruits Apple,Banana,Cherry] [! defines an array]
-  ```
+```
+[DEFVAR version 1.0] [! defines a single variable]
+[DEFVAR fruits Apple,Banana,Cherry] [! defines an array]
+```
 
 `DISPVAR`
 - Displays a variable or array item. Array items are indexed using `array.item` syntax. Arrays are 0-indexed.
 - Examples:
-- ```
-  [DISPVAR version] [! displays "1.0"]
-  [DISPVAR fruits.0] [! displays "Apple"]
-  [DISPVAR fruits.2] [! displays "Cherry"]
-  ```
+```
+[DISPVAR version] [! displays "1.0"]
+[DISPVAR fruits.0] [! displays "Apple"]
+[DISPVAR fruits.2] [! displays "Cherry"]
+```
