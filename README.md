@@ -71,7 +71,7 @@ Example: `[LIST [LISTI Apple][LISTI Banana][LISTI Cherry]]`
 
 `IMAGE`
 - Displays an image with URL. Example `[IMAGE http://eymenwinneryt.42web.io/banner1.gif]`
-- Renders as: [](http://eymenwinneryt.42web.io/banner1.gif)
+- Renders as: !(http://eymenwinneryt.42web.io/banner1.gif)
 
 `CLT` (Chemical low text)
 - Subscript. Example: `H[CLT 2]SO[CLT 4]`
