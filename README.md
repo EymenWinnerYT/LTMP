@@ -69,7 +69,30 @@ Example: `[LIST [LISTI Apple][LISTI Banana][LISTI Cherry]]`
 - Exponent text/superscript. Example: `2[EXP 3]`
 - Renders as: 2<sup>3</sup>
 
+`IMAGE`
+- Displays an image with URL. Example `[IMAGE http://eymenwinneryt.42web.io/banner1.gif]`
+- Renders as: [](http://eymenwinneryt.42web.io/banner1.gif)
 
 `CLT` (Chemical low text)
 - Subscript. Example: `H[CLT 2]SO[CLT 4]`
 - Renders as: H<sub>2</sub>SO<sub>4</sup>
+
+`!`
+- Comment tag, ignored by parser. Example: ```[! this is my paragraph]
+[HEADER1 Lorem Ipsum]```
+
+`DEFVAR`
+- Defines a variable or array of strings. Whitespace sensitive. Examples:
+- ```
+  [DEFVAR version 1.0] [! defines a single variable]
+  [DEFVAR fruits Apple,Banana,Cherry] [! defines an array]
+  ```
+
+`DISPVAR`
+- Displays a variable or array item. Array items are indexed using `array.item` syntax. Arrays are 0-indexed.
+- Examples:
+- ```
+  [DISPVAR version] [! displays "1.0"]
+  [DISPVAR fruits.0] [! displays "Apple"]
+  [DISPVAR fruits.2] [! displays "Cherry"]
+  ```
