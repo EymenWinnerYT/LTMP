@@ -139,7 +139,7 @@
                                 if(isset($arg1[1])){
                                     $output .= $variables[$arg1[0]][$arg1[1]];
                                 }else{
-                                    $output .= $variables[$arg1[0]];
+                                    $output .= $variables[$arg1[0]][0];
                                 }
                             }else{
                                 $this->parse_error = true;
