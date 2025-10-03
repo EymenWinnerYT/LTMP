@@ -24,7 +24,7 @@
                 "EXP" => "<sup>",
                 "CLT" => "<sub>",
                 "LINK" => '<a href="',
-                "TCOLOR" => '<span style="background-color: #',
+                "TCOLOR" => '<span style="background-color: ',
                 "LIST" => '<ul>',
                 "OLIST" => '<ol>',
                 "LISTI" => '<li>',
@@ -109,7 +109,12 @@
                             while($tokenbuff[$textoff] != 3){
                                 $arg2 .= $text[$textoff++];
                             }
-                            $output .= $arg1 . '; color: #' . $arg2 . ';">';
+                            if(ctype_digit($arg1)){
+                                $prefix = "#";
+                            }else{
+                                $prefix = "";
+                            }
+                            $output .= $prefix . $arg1 . '; color: ' . $prefix . $arg2 . ';">';
                             break;
                         case "IMAGE":
                             $output .= $tagopens[$keyword];
@@ -170,9 +175,8 @@
                 }
                 switch($tokenbuff[$textoff]){
                     case 0: $output .= $text[$textoff++]; continue 2;
-                    case 1:
-                        $block_start = true; $textoff++; continue 2;
-                        $block_end = true; continue 2;
+                    case 1: $block_start = true; $textoff++; continue 2;
+                    case 2: $block_end = true; continue 2;
                     case 3: $output .= $text[$textoff++]; continue 2;
                 }
             }
