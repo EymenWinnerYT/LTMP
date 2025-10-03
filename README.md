@@ -1,4 +1,4 @@
-**LTMP (Lightweight Text Markup Processor)** is a markup language. It uses tag system, has variables, colors, text formats and nesting etc. in under 200 lines of code. Tag syntax is like `[TAG arg1 arg2 ...]`.
+**LTMP (Lightweight Text Markup Processor)** is a markup language inspired by LISP syntax. It uses tag system, has variables, colors, text formats and nesting etc. in under 200 lines of code. Tag syntax is like `[TAG arg1 arg2 ...]`.
 
 ## How to include in PHP
 
