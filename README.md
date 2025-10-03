@@ -92,10 +92,11 @@ Example: `[LIST [LISTI Apple][LISTI Banana][LISTI Cherry]]`
 ```
 
 `DISPVAR`
-- Displays a variable or array item. Array items are indexed using `array.item` syntax. Arrays are 0-indexed.
+- Displays a variable or array item. Array items are indexed using `array.item` syntax. Arrays are 0-indexed. Every variable is an array internally.
 - Examples:
 ```
 [DISPVAR version] [! displays "1.0"]
+[DISPVAR version.0] [! also "1.0"]
 [DISPVAR fruits.0] [! displays "Apple"]
 [DISPVAR fruits.2] [! displays "Cherry"]
 ```
