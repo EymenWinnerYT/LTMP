@@ -88,11 +88,11 @@
                     if(!array_key_exists($keyword, $tagopens)){
                         $this->parse_error = true; return;
                     }
-                    $textoff++;
                     $arg1 = "";
                     $arg2 = "";
                     switch($keyword){
                         case "LINK":
+                            $textoff++;
                             $output .= $tagopens[$keyword];
                             //read argument
                             while($tokenbuff[$textoff] != 3){
@@ -101,6 +101,7 @@
                             $output .= $arg1 . '">';
                             break;
                         case "TCOLOR":
+                            $textoff++;
                             $output .= $tagopens[$keyword];
                             while($tokenbuff[$textoff] != 3){
                                 $arg1 .= $text[$textoff++];
@@ -110,13 +111,19 @@
                                 $arg2 .= $text[$textoff++];
                             }
                             if(ctype_digit($arg1)){
-                                $prefix = "#";
+                                $prefix1 = "#";
                             }else{
-                                $prefix = "";
+                                $prefix1 = "";
                             }
-                            $output .= $prefix . $arg1 . '; color: ' . $prefix . $arg2 . ';">';
+                            if(ctype_digit($arg2)){
+                                $prefix2 = "#";
+                            }else{
+                                $prefix2 = "";
+                            }
+                            $output .= $prefix1 . $arg1 . '; color: ' . $prefix2 . $arg2 . ';">';
                             break;
                         case "IMAGE":
+                            $textoff++;
                             $output .= $tagopens[$keyword];
                             while($tokenbuff[$textoff] != 2){
                                 $arg1 .= $text[$textoff++];
@@ -124,6 +131,7 @@
                             $output .= $arg1 . '">';
                             break;
                         case "DEFVAR":
+                            $textoff++;
                             $output .= $tagopens[$keyword];
                             while($tokenbuff[$textoff] != 3){
                                 $arg1 .= $text[$textoff++];
@@ -135,6 +143,7 @@
                             $variables[$arg1] = explode(",", $arg2);
                             break;
                         case "DISPVAR":
+                            $textoff++;
                             $output .= $tagopens[$keyword];
                             while($tokenbuff[$textoff] != 2){
                                 $arg1 .= $text[$textoff++];
